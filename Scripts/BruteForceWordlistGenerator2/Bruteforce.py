@@ -71,7 +71,3 @@ def bruteforce(liste,digs,countinues:list=None):
         if word == None:
             yield None
             break
-
-if __name__ == "__main__":
-    i = bruteforce(allAlps,5,["M","M","X"])
-    print(i.__next__())
