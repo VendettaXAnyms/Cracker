@@ -1,0 +1,26 @@
+def binarycal(binaryCode:str):
+    def givebitsli(bits):
+        ie = 1
+        w = []
+        if bits<9:
+            bits = 8
+        for i in range(bits):
+            w.append(ie)
+            ie = ie*2
+        return w
+    stri = str(binaryCode)
+    bitsli = givebitsli(len(stri))
+    stri = [i for i in stri]
+    stri.reverse()
+    coun = 0
+    coun1 = 0
+    for i in stri:
+        if i == "1":
+            coun = coun + bitsli[coun1]
+            coun1 = coun1 + 1
+        elif i == "0":
+            coun1 = coun1 + 1
+        else:
+            Exception("Please give a binary code in int format without any other characters except '1' & '0'.")
+            break
+    return coun
